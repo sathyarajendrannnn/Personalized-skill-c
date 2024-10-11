@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    char input[100];
+    printf("Enter a string: ");
+    scanf("%[^\n]", input);
+
+    int count = 0;
+    int i = 0;
+    
+    while (input[i] != '\0') {
+        if (input[i] == '(' || input[i] == ')' || input[i] == ';' || input[i] == '?') {
+            count++;  
+        }
+        i++; 
+    }
+
+    printf("%d\n", count);
+
+    return 0;
+}
