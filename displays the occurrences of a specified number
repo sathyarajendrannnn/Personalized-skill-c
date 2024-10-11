@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int n, numToCount, count = 0;
+    printf("Enter size of array: ");
+    scanf("%d", &n);
+    int arr[n]; 
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("Enter the number to count occurrences: ");
+    scanf("%d", &numToCount);
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == numToCount) {
+            count++; 
+        }
+    }
+    printf("The number %d occurs %d times in the array.\n", numToCount, count);
+    return 0;
+}
