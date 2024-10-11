@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    char oldChar, newChar;
+    char *pos;
+    scanf("%[^\n]", str);
+
+    printf("Enter the character to replace: ");
+    scanf(" %c", &oldChar);
+
+    printf("Enter the new character: ");
+    scanf(" %c", &newChar); 
+
+    pos = strrchr(str, oldChar);
+
+    if (pos != NULL) {
+        *pos = newChar;
+    }
+
+    printf("Modified string: %s\n", str);
+
+    return 0;
+}
