@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[200];
+    char target[50];
+    char result[200];
+    int i, j, k, Len;
+
+    scanf("%[^\n]", str);
+    scanf(" %s", target); 
+
+    Len = strlen(target);
+    i = 0; 
+    j = 0;  
+
+    while (str[i] != '\0') {
+        if (strncmp(&str[i], target, Len) == 0 && (i == 0 || str[i - 1] == ' ') && (str[i +Len] == ' ' || str[i + Len] == '\0')) {
+            i += Len;
+            if (str[i] == ' ') {
+                i++;
+            }
+        } else {
+            result[j++] = str[i++];
+        }
+    }
+
+    result[j] = '\0';
+
+    printf("String after removing the word: %s\n", result);
+
+    return 0;
+}
